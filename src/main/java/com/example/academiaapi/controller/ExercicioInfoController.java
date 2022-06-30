@@ -36,8 +36,8 @@ public class ExercicioInfoController {
     }
 
     @PostMapping
-    public ResponseEntity<ExercicioInfoEntity> insert(@Valid @RequestBody ExercicioInfoEntity ExercicioInfoEntity) {
-        ExercicioInfoEntity entity = exercicioInfoService.insert(ExercicioInfoEntity);
+    public ResponseEntity<ExercicioInfoEntity> insert(@Valid @RequestBody ExercicioInfoEntity exercicioInfoEntity) {
+        ExercicioInfoEntity entity = exercicioInfoService.insert(exercicioInfoEntity);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(entity.getId()).toUri();
         return ResponseEntity.created(uri).body(entity);

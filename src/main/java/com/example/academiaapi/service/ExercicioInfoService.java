@@ -1,9 +1,9 @@
 package com.example.academiaapi.service;
 
 import com.example.academiaapi.entity.ExercicioInfoEntity;
-import com.example.academiaapi.entity.ExercicioInfoEntity;
+
 import com.example.academiaapi.repository.ExercicioInfoRepository;
-import com.example.academiaapi.repository.ExercicioRepository;
+
 import com.example.academiaapi.service.exceptions.DatabaseException;
 import com.example.academiaapi.service.exceptions.ResourceNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -12,7 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
+
 import java.util.Optional;
 
 @Service

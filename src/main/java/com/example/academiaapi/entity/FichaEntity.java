@@ -1,5 +1,6 @@
 package com.example.academiaapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.util.List;
-import java.util.Map;
+
 
 @Entity
 @Data
