@@ -55,11 +55,8 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.9</version>
-        </dependency>
+
+
 
         <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
         <dependency>

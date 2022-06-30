@@ -26,7 +26,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     private static final String[] OPERATOR_OR_ADMIN = {"/client/**","/users/**"};
 
-    private static final String[] ADMIN = { "/exercicios/**", "/exercicioinfo/**", "/ficha/**"};
+    private static final String[] ADMIN = {"/**" ,"/exercicios/**", "/exercicioinfo/**", "/ficha/**"};
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
