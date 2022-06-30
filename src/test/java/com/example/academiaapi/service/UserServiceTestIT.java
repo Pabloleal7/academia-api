@@ -13,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.transaction.Transactional;
 import java.util.Optional;
@@ -30,6 +31,7 @@ class UserServiceTestIT {
     private Long existingId;
     private Long nonExistingId;
     private Long countTotalUsers;
+    private Pageable pageable;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -40,7 +42,7 @@ class UserServiceTestIT {
 
     @Test
     void findAllPagedShouldReturnAllPages() {
-        Pageable pageable = PageRequest.of(0,10);
+        pageable = PageRequest.of(0,10);
 
 
         Page<UserResponseDTO> result =  service.findAllPaged(pageable);
@@ -73,9 +75,16 @@ class UserServiceTestIT {
 
     @Test
     void deleteById() {
+
+        pageable = PageRequest.of(0,10);
+        service.deleteById(existingId);
+        Assertions.assertEquals(0,service.findAllPaged(pageable).getTotalElements());
     }
 
     @Test
-    void loadUserByUsername() {
+    void loadUserByUsernameShouldReturnUserWhenUsernameExist() {
+       UserDetails entity = service.loadUserByUsername("pabloleal7@hotmail.com");
+       Assertions.assertEquals("pabloleal7@hotmail.com", entity.getUsername());
+
     }
 }
